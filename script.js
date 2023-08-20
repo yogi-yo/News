@@ -8,6 +8,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
+    console.log("url",`${url}${query}&apiKey=${API_KEY}`)
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
     const data = await res.json();
     // console.log(data)
@@ -39,7 +40,7 @@ function fillDataInCard(cardClone, article) {
     newsDesc.innerHTML = article.description;
 
     const date = new Date(article.publishedAt).toLocaleString("en-US", {
-        timeZone: "Asia/Jakarta",
+        timeZone: "Asia/Kolkata",
     });
 
     newsSource.innerHTML = `${article.source.name} · ${date}`;
